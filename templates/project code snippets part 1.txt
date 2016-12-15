@@ -1,0 +1,278 @@
+
+# This function is just for debugging output; you can safely ignore it.
+def finishexample(name):
+    print("\nThis is the content of the file 'output.txt' after the example for " + name + ":\n")
+    with open('output.txt', 'r') as f:
+        print(f.read())
+
+Programming Code segment to read and write to files on disk.
+
+#!/bin/python3
+import thisexample
+
+########## Writing a text file ##########
+
+with open('output.txt', 'w') as f:
+    f.write('This is being written to a file.\n')
+    f.write('And this is the second line of the file!\n')
+
+#####
+# Writing a file is very similar to reading a file. Simply pass in a 'w' for
+# write mode instead of 'r' for read mode. Then, call f.write with whatever text
+# you want to write to the file.
+#
+# Note that 'w' mode will create a new file if the file does not exist. If the
+# file does exist, its old contents will be deleted.
+####
+thisexample.finishexample("writing a text file with 'w' mode")
+
+
+########## Appending to a text file ##########
+
+with open('output.txt', 'a') as f:
+    f.write('This line is appended to the file.\n')
+
+#####
+# You can open a file in append mode by passing an 'a' as the second parameter.
+#
+# Append mode behaves almost exactly like write mode from above. If the file
+# does not exist, it will be created.
+#
+# The only difference is that if the file does exist, append mode will start
+# writing to the file at the end of the file instead of deleting any previous
+# contents. Thus, anything you write is appended to the end of the file.
+#
+# Because the file 'output.txt' exists from the first example, the code above
+# simply adds on one line to the file.
+#####
+thisexample.finishexample("appending to a text file with 'a' mode")
+
+
+########## Exclusive creation of a text file ##########
+print("Exclusive creation of the text file throws an exception:")
+
+with open('output.txt', 'x') as f:
+    print('This is never reached.')
+
+#####
+# You can open a file in exclusive creation mode by passing an 'x' as the second
+# parameter.
+#
+# Exclusive creation mode behaves almost exactly like write mode from above. If
+# the file does not exist, it will be created.
+#
+# The only difference is that if the file does exist, exclusive creation mode
+# will throw a FileExistsError exception. Therefore, if exclusive creation does
+# not create the text file itself, opening the file will fail.
+#
+# Because the file 'output.txt' exists from the first two examples, the code
+# above throws an exception.
+#
+# Note that this mode is not available in Python 2.
+#####
+
+Shopping Cart Code different group snippet part 1:
+
+class Item(object):
+    def __init__(self,itemname,itemprice):
+        self.__itemname = itemname
+        self.__itemprice = itemprice
+
+    def GetItemName(self):
+        return self.__itemname
+
+    def GetItemPrice(self):
+        return self.__itemprice
+
+    def ChangeItemPrice(self,newprcie):
+        self.__itemprice = newprcie
+
+class Cart(dict):      #cart dict format:  {itemname:[price,number]}
+    def ShowCart(self):
+        return self   
+
+class User(object):
+    def __init__(self, name):    
+        self.name = name
+        self.__cartlist = {}
+        self.__cartlist[0] = Cart()
+
+    def AddCart(self):
+        self.__cartlist[len(self.__cartlist)] = Cart()
+
+    def GetCart(self, cartindex = 0):
+        return self.__cartlist[cartindex]
+
+    def BuyItem(self, item, itemnum, cartindex = 0):
+        try:
+            self.__cartlist[cartindex][item.GetItemName()][1] += itemnum
+        except:
+            self.__cartlist[cartindex].update({item.GetItemName():[item.GetItemPrice(),itemnum]})
+
+    def BuyCancle(self, itemname, itemnum, cartindex = 0):
+        pass
+
+if __name__ == '__main__': 
+
+    item1 = Item('apple', 7.8)
+    item2 = Item('pear', 5)   
+
+    user1 = User('John')
+
+    user1.BuyItem(item1, 5)
+    print("user1 cart0 have: %s" % user1.GetCart(0).ShowCart())
+
+    user1.BuyItem(item2, 6)
+    print("user1 cart0 have: %s" % user1.GetCart(0).ShowCart())
+
+
+    user1.AddCart()
+    user1.BuyItem(item1, 5, 1)
+    print("user1 cart1 have: %s" % user1.GetCart(1).ShowCart())
+
+Shopping Cart Code different group snippet part 2:
+
+class Item(object):
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+class Cart(dict):
+    def add_item(self, item, amount):
+        try:
+            self[item.name][1] += amount
+        except IndexError:
+            self.update({
+                item.name: [item.price, amount]
+            })
+
+class User(object):
+    def __init__(self, name):    
+        self.name = name
+        self.carts = [Cart()]
+
+    def add_cart(self):
+        self.carts.append(Cart())
+
+    def add_item(self, item, amount, cart_index=0):
+        self.carts[cart_index].add_item(item, amount)
+
+def main():
+    apple = Item('apple', 7.8)
+
+    john = User('John')
+
+    # I would choose `john.add_item(apple, 5, 1)`
+    # or `john.carts[0].add_item(apple, 5)`
+    # Not both.
+    john.add_item(apple, 5)
+    print("John's first cart has: {}".format(john.carts[0]))
+
+    john.carts[0].add_item(Item('pear', 5), 6)
+    print("John's first cart has: {}".format(john.carts[0]))
+
+    john.add_cart()
+    john.add_item(apple, 5, 1)
+    print("John's second cart has: {}".format(john.carts[1]))
+
+if __name__ == '__main__':
+    main()
+
+Shopping Cart Code snippet part 1:
+
+class Item: 
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def getPrice(self):
+        return self.price
+
+    def getName(self):
+        return self.name
+
+class Cart:
+    def __init__(self, list):
+        self.list = []
+
+    def addItem(self, item):
+        self.list.append(self.list)
+
+    def getTotal(self):
+        total = 0
+        for item in self.list:
+            name, price = item # or price = item[1]
+            total = total + price
+
+    def getNumItems(self):
+        count = 0
+        for c in range(self.list):
+            count = self.list + 1
+            return count
+
+    def removeItem(self, item)
+        #removes the item from the cart's item list
+
+def main():
+    item1 = Item("Banana", .69)
+    item2 = Item("Eggs", 2.39)
+    item3 = Item("Donut", .99)
+    c = Cart()
+    c.addItem(item1)
+    c.addItem(item2)
+    c.addItem(item3)
+    print "You have %i items in your cart for a total of $%.02f" %(c.getNumItems(), c.getTotal())
+    c.removeItem(item3)
+    print "You have %i items in your cart for a total of $%.02f" % (c.getNumItems(), c.getTotal())
+main()  
+
+Shopping Cart Code snippet part 2:
+
+class Item(object): 
+    def __init__(self, unq_id, name, price, qty):
+        self.unq_id = unq_id
+        self.product_name = name
+        self.price = price
+        self.qty = qty
+
+class Cart(object):
+    def __init__(self):
+        self.content = dict()
+
+    def update(self, item):
+        if item.unq_id not in self.content:
+            self.content.update({item.unq_id: item})
+            return
+        for k, v in self.content.get(item.unq_id).iteritems():
+            if k == 'unq_id':
+                continue
+            elif k == 'qty':
+                total_qty = v.qty + item.qty
+                if total_qty:
+                    v.qty = total_qty
+                    continue
+                self.remove_item(k)
+            else:
+                v[k] = item[k]
+
+    def get_total(self):
+        return sum([v.price * v.qty for _, v in self.content.iteritems()])
+
+    def get_num_items(self):
+        return sum([v.qty for _, v in self.content.iteritems()])
+
+    def remove_item(self, key):
+        self.content.pop(key)
+
+
+if __name__ == '__main__':
+    item1 = Item(1, "Banana", 1., 1)
+    item2 = Item(2, "Eggs", 1., 2)
+    item3 = Item(3, "Donut", 1., 5)
+    cart = Cart()
+    cart.update(item1)
+    cart.update(item2)
+    cart.update(item3)
+    print "You have %i items in your cart for a total of $%.02f" % (cart.get_num_items(), cart.get_total())
+    cart.remove_item(1)
+    print "You have %i items in your cart for a total of $%.02f" % (cart.get_num_items(), cart.get_total())

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(even) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+
+<h1 style="text-align:center;">Gigi's Catering Order</h1>
+
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td>Large Gourmet Meat & Cheese Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>3 Ft Party Sub</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Gigi's Mini Sweet Rolls (1 dozen)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Variety Wrap Platter</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tea Sandwiches</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Toasted Ravioli</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Boneless Wing Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Relish Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Fruit Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Chip and Dip Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>French Onion Dip</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Chips by the Pound</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Brownie Tray</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Chocolate Chip Cookie Tray (50 cookies)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Salted Caramel Cookie Tray (15 cookies)</td>
+    <td></td>
+  </tr>
+</table>
+<br>
+
+<h1 style="text-align:center;">Gourmet Lunch Boxes</h1>
+
+<table id="t01">
+  <tr>
+    <th>Qty</th>
+    <th>Meat</th>
+    <th>Qty</th>
+    <th>Cheese</th>
+    <th>Qty</th>
+    <th>Bread</th>
+    <th>Qty</th>
+    <th>Side</th>
+    <th>Qty</th>
+    <th>Dessert</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Ham</td>
+    <td></td>
+	<td>Swiss</td>
+    <td></td>
+    <td>Wheatberry</td>
+    <td></td>
+    <td>Potato Salad</td>
+    <td></td>
+    <td>Brownie</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Roasted Turkey</td>
+    <td></td>
+    <td>Pepper Jack</td>
+    <td></td>
+    <td>Hoagie</td>
+    <td></td>
+    <td>Pasta Salad</td>
+    <td></td>
+    <td>Cookie</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Roast Beef</td>
+    <td></td>
+    <td>Provolone</td>
+    <td></td>
+    <td>Pretzel</td>
+    <td></td>
+    <td>Potato Chips</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Chicken Salad</td>
+    <td></td>
+    <td>Cheddar</td>
+    <td></td>
+    <td>Croissant</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Tuna Salad</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+{% endblock %}

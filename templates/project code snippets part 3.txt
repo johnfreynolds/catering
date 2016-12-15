@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form action="action_page.php">
+First name:<br>
+<input type="text" name="firstname" value="John">
+<br>
+Last name:<br>
+<input type="text" name="lastname" value="Reynolds">
+<br><br>
+<input type="submit" value="Submit">
+<input type="reset">
+</form>
+
+<p>If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.</p>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="button" onclick="alert('Hello World!')" value="Click Me!">
+
+</body>
+</html>
+
+<img src="html5.gif" alt="HTML5" style="width:128px;height:128px">
+

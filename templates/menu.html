@@ -1,0 +1,317 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Gigi's Catering Menu</h1>
+
+<form method="post">
+    <label>
+        <div><h2>Large Gourmet Meat & Cheese Tray</h2></div>
+        <p>
+             Fresh Roast Sirloin Beef, Baked Ham, and
+             Roasted Turkey with Swiss and
+             American Cheese<br>
+             Serves 20-25 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $54.99 Per Tray
+        <input type="hidden" name="unq_id" value="1">
+        <input type="hidden" name="product_name" value="Large Gourmet Meat & Cheese Tray">
+        <input type="hidden" name="price" value="54.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>GiGi's Signature Chicken Salad</h2></div>
+        <h3>Mini Croissants Tray Sold by the Dozen</h3>
+        <input type="checkbox" name="chkbox" value="True"> Per Dozen $26.99
+        <input type="hidden" name="unq_id" value="2">
+        <input type="hidden" name="product_name" value="Chicken Salad Mini Croissants Tray">
+        <input type="hidden" name="price" value="26.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+        <h3>Chicken Salad Sold by the Pound</h3>
+        <input type="checkbox" name="chkbox" value="True"> Per Pound $7.99
+        <input type="hidden" name="unq_id" value="3">
+        <input type="hidden" name="product_name" value="Chicken Salad Sold by the Pound">
+        <input type="hidden" name="price" value="7.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Relish Tray</h2></div>
+        <p>
+            Carrot Sticks, Celery Sticks, Olives, and
+            Butterchip Pickles Served with Ranch Veggie Dip<br>
+            Serves 10-15 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $19.99 Per Tray
+        <input type="hidden" name="unq_id" value="4">
+        <input type="hidden" name="product_name" value="Relish Tray">
+        <input type="hidden" name="price" value="19.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Fruit Tray</h2></div>
+        <p>Strawberries, Grapes, Pineapple, Honey Dew, Cantaloupe, and
+        Watermelon (when in season)<br>
+        Serves 15-20 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $39.99 Per Tray
+        <input type="hidden" name="unq_id" value="5">
+        <input type="hidden" name="product_name" value="Fruit Tray">
+        <input type="hidden" name="price" value="39.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Toasted Ravioli</h2></div>
+        <p>Served with Marinara Sauce<br>
+        Serves 15-20 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $19.99 Per Tray
+        <input type="hidden" name="unq_id" value="6">
+        <input type="hidden" name="product_name" value="Toasted Ravioli">
+        <input type="hidden" name="price" value="19.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>3 Foot Party Sub</h2></div>
+        <p>Fresh Roasted Sirloin Beef, Baked Ham, Hard
+        Salami, Swiss Cheese, American Cheese, and
+        Green Leaf Lettuce<br>
+        Serves 10-15 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $39.99 Each
+        <input type="hidden" name="unq_id" value="7">
+        <input type="hidden" name="product_name" value="3 Foot Party Sub">
+        <input type="hidden" name="price" value="39.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Wing Tray</h2></div>
+        <p>You can have your Wing Tray as a Buffalo Wing or Wild Wing. You can
+        provide further information in the bottom section of this menu.<br>
+        Serves 15-20 people and costs about $19.99 Per Tray
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> Buffalo Wing
+        <input type="hidden" name="unq_id" value="8">
+        <input type="hidden" name="product_name" value="Buffalo Wing Tray">
+        <input type="hidden" name="price" value="19.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+        <br>
+        <input type="checkbox" name="chkbox" value="True"> Wild Wing
+        <input type="hidden" name="unq_id" value="9">
+        <input type="hidden" name="product_name" value="Wild Wing Tray">
+        <input type="hidden" name="price" value="19.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>GiGi's Fresh Made Potato Chips</h2></div>
+        <p>Served with a French Onion Dip Tray<br>
+        Serves 10-15 people
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $16.99 Per Tray
+        <input type="hidden" name="unq_id" value="10">
+        <input type="hidden" name="product_name" value="Potato Chips Served with French Onion Dip Tray">
+        <input type="hidden" name="price" value="16.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>GiGi's Mini Sweet rolls</h2></div>
+        <ul>
+            <li>Ham & Swiss Cheese</li>
+            <li>Fresh Roasted Sirloin Beef & Cheddar Cheese</li>
+            <li>Fresh Roasted Turkey & Provel Cheese</li>
+            <li>$21.99 Per Dozen
+        </ul>
+        <input type="checkbox" name="chkbox" value="True"> Ham and Swiss
+        <input type="hidden" name="unq_id" value="11">
+        <input type="hidden" name="product_name" value="Sweet Rolls Ham and Swiss By The Dozen">
+        <input type="hidden" name="price" value="21.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+        <br>
+        <input type="checkbox" name="chkbox" value="True"> Roast Beef and Cheddar Cheese
+        <input type="hidden" name="unq_id" value="12">
+        <input type="hidden" name="product_name" value="Sweet Rolls Roast Beef and Cheddar Cheese By The Dozen">
+        <input type="hidden" name="price" value="21.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+        <br>
+        <input type="checkbox" name="chkbox" value="True"> Roasted Turkey and Provel Cheese
+        <input type="hidden" name="unq_id" value="13">
+        <input type="hidden" name="product_name" value="Sweet Rolls Roasted Turkey and Provel Cheese By The Dozen">
+        <input type="hidden" name="price" value="21.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>GiGi's Brownie Tray</h2></div>
+        <p>Serves 10-15 people</p>
+        <input type="checkbox" name="chkbox" value="True"> $19.99 Per Tray
+        <input type="hidden" name="unq_id" value="14">
+        <input type="hidden" name="product_name" value="GiGi's Brownie Tray">
+        <input type="hidden" name="price" value="19.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Variety Wrap Platter</h2></div>
+        <p>Our Variety Wrap Platters come with Chicken Caesar, Turkey Ranch, and
+        Buffalo Chicken Tender w/Ranch
+        </p>
+        <input type="checkbox" name="chkbox" value="True"> $25.99 Per Tray
+        <input type="hidden" name="unq_id" value="15">
+        <input type="hidden" name="product_name" value="Variety Wrap Platter">
+        <input type="hidden" name="price" value="25.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>Tea Sandwiches</h2></div>
+        <p>GiGi's Signature Chicken Salad or Tuna Salad on Wheatberry Bread<br>
+        Serves 10-15 people<br>
+        $25.99 Per Tray</p>
+        <input type="checkbox" name="chkbox" value="True"> Chicken Salad
+        <input type="hidden" name="unq_id" value="16">
+        <input type="hidden" name="product_name" value="Tea Sandwiches with Chicken Salad on Wheatberry Bread">
+        <input type="hidden" name="price" value="25.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+        <br>
+        <input type="checkbox" name="chkbox" value="True"> Tuna Salad
+        <input type="hidden" name="unq_id" value="17">
+        <input type="hidden" name="product_name" value="Tea Sandwiches with Tuna Salad on Wheatberry Bread">
+        <input type="hidden" name="price" value="25.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <label>
+        <div><h2>GiGi's Cookie Tray</h2></div>
+        <p>Our Cookie Trays come with Chocolate Chip and Sugar Cookies<br>
+        Serves 10-20 people</p>
+        <input type="checkbox" name="chkbox" value="True"> $16.99 Per Tray
+        <input type="hidden" name="unq_id" value="18">
+        <input type="hidden" name="product_name" value="Gigi's Cookie Tray">
+        <input type="hidden" name="price" value="16.99">
+        Qty: <input type="text" name="qty" value="{{qty}}">
+    </label>
+    <br>
+    <hr style="height:0px">
+    <br>
+    <label>
+        <div><h1>GiGi's Lunch Boxes</h1></div>
+        <ul style="list-style-type:disc">
+        <li><h2>Choice of Meat:</h2></li>
+            <ul style="list-style-type:square">
+                 <li>Fresh Roasted Sirloin Beef</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="100">
+                 <input type="hidden" name="product_name" value="Lunch Box: Meat - Roast Beef">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Fresh Ham</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="101">
+                 <input type="hidden" name="product_name" value="Lunch Box: Meat - Ham">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Fresh Roasted Turkey</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="102">
+                 <input type="hidden" name="product_name" value="Lunch Box: Meat - Roasted Turkey">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Chicken Salad</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="103">
+                 <input type="hidden" name="product_name" value="Lunch Box: Chicken Salad">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Tuna Salad</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="104">
+                 <input type="hidden" name="product_name" value="Lunch Box: Tuna Salad">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+            </ul>
+        <li><h2>Choice of Cheese:</h2></li>
+            <ul style="list-style-type:square">
+                 <li>Cheddar Cheese</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="110">
+                 <input type="hidden" name="product_name" value="Lunch Box: Cheese - Cheddar">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Swiss Cheese</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="111">
+                 <input type="hidden" name="product_name" value="Lunch Box: Cheese - Swiss">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Provolone Cheese</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="112">
+                 <input type="hidden" name="product_name" value="Lunch Box: Cheese - Provolone">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Pepper Jack Cheese</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="113">
+                 <input type="hidden" name="product_name" value="Lunch Box: Cheese - Pepper Jack">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+            </ul>
+        <li><h2>Choice of Bread:</h2></li>
+            <ul style="list-style-type:square">
+                 <li>Wheatberry</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="120">
+                 <input type="hidden" name="product_name" value="Lunch Box: Bread - Wheatberry">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Hoagie</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="121">
+                 <input type="hidden" name="product_name" value="Lunch Box: Bread - Hoagie">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Pretzel</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="122">
+                 <input type="hidden" name="product_name" value="Lunch Box: Bread - Pretzel">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Croissant</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="123">
+                 <input type="hidden" name="product_name" value="Lunch Box: Bread - Croissant">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+            </ul>
+        <li><h2>Choice of a Side Item:</h2></li>
+            <ul style="list-style-type:square">
+                 <li>Potato Salad</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="130">
+                 <input type="hidden" name="product_name" value="Lunch Box: Side - Potato Salad">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Pasta Salad</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="131">
+                 <input type="hidden" name="product_name" value="Lunch Box: Side - Pasta Salad">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Potato Chips</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="132">
+                 <input type="hidden" name="product_name" value="Lunch Box: Side - Potato Chips">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+            </ul>
+        <li><h2>Choice of a Dessert:</h2></li>
+            <ul style="list-style-type:square">
+                 <li>Brownie</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="140">
+                 <input type="hidden" name="product_name" value="Lunch Box: Dessert - Brownie">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+                 <li>Cookie</li>
+                 <input type="checkbox" name="chkbox" value="True"> Select this Item
+                 <input type="hidden" name="unq_id" value="141">
+                 <input type="hidden" name="product_name" value="Lunch Box: Dessert - Cookie">
+                 Qty: <input type="text" name="qty" value="{{qty}}">
+            </ul>
+        </ul>
+        <p>All of our Lunch Box meals come with Lettuce & Tomato.</p>
+        <p>A Whole Meal In a Box! For $9.49 Each</p>
+    </label>
+    <br>
+    <hr style="height:0px">
+    <br>
+        <label>
+        <div>Additional Comments and/or Special Requests</div>
+        <textarea name="body">{{body}}</textarea>
+        </label>
+    <div class="error">{{ error }}</div>
+
+
+    <input type="button" value="submit">
+    <input type="reset">
+</form>
+
+{% endblock %}

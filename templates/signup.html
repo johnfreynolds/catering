@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Signup</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td><label for="username">Username</label></td>
+            <td>
+                <input name="username" type="text" value="{{ username }}">
+                <span class="error">{{ errors.username_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password">
+                <span class="error">{{ errors.password_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="verify">Verify Password</label></td>
+            <td>
+                <input name="verify" type="password">
+                <span class="error">{{ errors.verify_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email (optional)</label></td>
+            <td>
+                <input name="email" type="email" value="{{ email }}">
+                <span class="error">{{ errors.email_error }}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="addr1">Address 1</label></td>
+            <td>
+                <input name="addr1" type="address" value="{{ addr1 }}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="addr1">Address 2</label></td>
+            <td>
+                <input name="addr2" type="address" value="{{ addr2 }}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="city">City</label></td>
+            <td>
+                <input name="city" type="city" value="{{ city }}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="state">State</label></td>
+            <td>
+                <input name="state" type="state" value="{{ state }}">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="zip">Zip</label></td>
+            <td>
+                <input name="zip" type="zip" value="{{ zip }}">
+            </td>
+        </tr>
+
+    </table>
+    <input type="submit">
+    <input type="reset">
+</form>
+
+{% endblock %}
